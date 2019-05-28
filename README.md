@@ -11,4 +11,8 @@ Puis :
  .env : 
  DATABASE_URL=mysql://root:root@127.0.0.1:3306/coupsdegueule
  
+ run :
+ 
+ bin/console server:run
+ 
  
