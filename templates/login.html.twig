@@ -2,8 +2,23 @@
 
 {% block title %} LOG IN {% endblock %}
 
+
 {% block body %}
+
+    <a href="/register">register</a>
+
+
     <h1>Name</h1>
     {{ foo }}
     {{ titi }}
+    {% for post in postlist %}
+        {{ post.title }},
+        <br>
+        {{ post.content }},
+        <br>
+        {{ post.creationDate|date('d/m/Y') }}
+        <br>
+        {{ post.editDate|date('d/m/Y') }}
+        <hr>
+    {% endfor %}
 {% endblock %}

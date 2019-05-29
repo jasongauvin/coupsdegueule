@@ -17,7 +17,7 @@ class PostFixtures extends Fixture
             $post = new Post();
 
             $post->setTitle("Test");
-            $post->setContent("loremipsum");
+            $post->setContent("loremipsumloremipsumloremipsumloremipsumloremipsumloremipsumloremipsumloremipsum");
             $post->setCreationDate(new \DateTime());
             $post->setEditDate(new \DateTime());
 

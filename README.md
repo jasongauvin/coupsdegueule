@@ -28,4 +28,8 @@ Puis :
  reload webpack :
  yarn encore dev --watch
  
+ composer install encore
+ 
+ bin/console make:migration
+ 
  
