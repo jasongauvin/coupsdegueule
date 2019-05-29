@@ -19,7 +19,7 @@ class AppController extends AbstractController
     {
         $list = $postRepository->findAll();
 
-        return $this->render("login.html.twig", [
+        return $this->render("home.html.twig", [
         "foo" => "bar",
         "titi" => "toto",
         "postlist" => $list // boucle sur postlist <3

@@ -3,14 +3,20 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        {{ encore_entry_link_tags('app') }}
+        {% block stylesheets %}
+        {% endblock %}
     </head>
 
     <body>
-    <hr>COUCOU
         {% block body %}
 
         {% endblock %}
-        {% block javascripts %}{% endblock %}
+        <script src="{{ asset('build/runtime.js') }}"></script>
+        <script src="{{ asset('build/app.js') }}"></script>
+        {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+
+        {% endblock %}
     </body>
 </html>

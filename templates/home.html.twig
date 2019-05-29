@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Post index
+{% endblock %}
+
+{% block body %}
+    <div class="wrapper">
+        <section class="sidebar sidebar--post"></section>
+        <section class="main">
+            <main>
+                {% for post in postlist %}
+                    <div class="post" id="post--{{ post.id }}">
+                        <header class="post__header">
+                            <div class="post__header__info">
+                                <p class="vote__number visible-xs">3</p>
+                                <a href="profil.html">
+                                    <div class="post__header__image">
+                                        <img alt="" src="https://lamodeestchiant.netlify.com/image.b76b0243.png">
+                                    </div>
+                                </a>
+                                <p class="post__header__author">Francois,
+                                </p>
+                                <p class="post__header__date">{{ post.creationDate ? post.creationDate|date('Y-m-d H:i:s') : '' }}</p>
+                                {#  {{ post.editDate ? post.editDate|date('Y-m-d H:i:s') : '' }} #}
+                            </div>
+                            <div class="post__header__edit">
+                                <a href="{{ path('post_edit', {'id': post.id}) }}">Edit</a>
+                                {# <a href="{{ path('post_show', {'id': post.id}) }}">show</a> #}
+                            </div>
+                        </header>
+                        <div class="post__wrapper">
+                            <div class="post__vote vote">
+                                <p class="vote__number hidden-xs">3</p>
+                                <div class="vote__navigation">
+                                    <button class="vote__navigation__arrow vote__navigation__arrow--up"></button>
+                                    <button class="vote__navigation__arrow vote__navigation__arrow--down"></button>
+                                </div>
+                            </div>
+                            <div class="post__content">
+                                <p class="post__content__text">
+                                    ....
+                                    {{ post.content }}
+                                </p>
+
+                                <figure class="post__content__image">
+                                    <img alt="" src="https://ichef.bbci.co.uk/news/660/cpsprodpb/E9DF/production/_96317895_gettyimages-164067218.jpg">
+                                </figure>
+
+                                <!-- <div class="post__button--comment">
+                                                                                                                                                                                                  <button class="post__button--commentButton"></button>
+                                                                                                                                                                                                  <p class="post__button--commentCount">3</p>
+                                                                                                                                                                                                </div> -->
+
+                                <div class="post__button--vote">
+                                    <div class="post__button--vote__box">
+                                        <button class="post__button--vote__arrow post__button--vote__arrow--up"></button>
+                                        <p class="post__button--commentCount post__button--commentCount--up">3</p>
+                                    </div>
+                                    <div class="post__button--vote__box">
+                                        <button class="post__button--vote__arrow post__button--vote__arrow--down"></button>
+                                        <p class="post__button--commentCount post__button--commentCount--down">3</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% else %}
+                    <p>Pas de posts</p>
+                {% endfor %}
+            </main>
+        </section>
+        <a href="{{ path('post_new') }}">Create new</a>
+    </div>
+{% endblock %}
