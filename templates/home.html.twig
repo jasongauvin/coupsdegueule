@@ -1,11 +1,21 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Post index
-{% endblock %}
+{% block title %}Post index{% endblock %}
 
 {% block body %}
+    <button class="button--circle button--nav"></button>
+    <img src="https://lamodeestchiant.netlify.com/mec.775f42c5.png" alt="" class="mec hidden-xs">
     <div class="wrapper">
-        <section class="sidebar sidebar--post"></section>
+        <section class="sidebar sidebar--post">
+            <div class="sidebar__filter">
+                <input type="text" placeholder="Search.." class="searchbar">
+                <button class="button">Plus nouvelles</button>
+                <button class="button">Hasard</button>
+                <button class="button">Plus populaires</button><br>
+                <button class="button button--commit">Searche</button>
+            </div>
+            <a href="login.html"><button class="button--circle button--profil"></button></a>
+        </section>
         <section class="main">
             <main>
                 {% for post in postlist %}
@@ -20,7 +30,7 @@
                                 </a>
                                 <p class="post__header__author">Francois,
                                 </p>
-                                <p class="post__header__date">{{ post.creationDate ? post.creationDate|date('Y-m-d H:i:s') : '' }}</p>
+                                <p class="post__header__date">{{ post.creationDate ? post.creationDate|date('Y-m-d') : '' }}</p>
                                 {#  {{ post.editDate ? post.editDate|date('Y-m-d H:i:s') : '' }} #}
                             </div>
                             <div class="post__header__edit">
@@ -69,6 +79,5 @@
                 {% endfor %}
             </main>
         </section>
-        <a href="{{ path('post_new') }}">Create new</a>
     </div>
 {% endblock %}

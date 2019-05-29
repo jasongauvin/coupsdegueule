@@ -35,4 +35,43 @@
         Sign in
     </button>
 </form>
+    <body class="login">
+    <img src="https://lamodeestchiant.netlify.com/mec.775f42c5.png" alt="" class="mec hidden-xs">
+    <div class="wrapper">
+        <section class="sidebar sidebar--login">
+            <p>
+                ... est un espace où vous pouvez soulager toutes vos frustrations et profiter du chagrin des autres.
+            </p>
+        </section>
+        <section class="main">
+            <main>
+            </main>
+        </section>
+
+        <div class="popup">
+            <div class="popup__content popup__content--login">
+                <h2 class="popup__headline">Connectes toi !!!!!</h2>
+                <p class="popup__text">
+                    Conectez toi pour profiter des tout le functionalite du site.
+                    <span class="popup__text popup__text--error"></span>
+                </p>
+                <form action="" method="get" class="form form--login" autocomplete="off">
+                    <div class="form__line">
+                        <label for="username">Enter ton Username : </label>
+                        <input type="text" name="username" id="username" required>
+                    </div>
+                    <div class="form__line">
+                        <label for="password">Enter ton mot des password : </label>
+                        <input type="password" name="password" id="password" required>
+                    </div>
+                    <div class="form__button">
+                        <input type="submit" value="Send">
+                    </div>
+                </form>
+                <a href="signup.html" class="textLink">Pas encore un compte?</a>
+            </div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+    </body>
 {% endblock %}

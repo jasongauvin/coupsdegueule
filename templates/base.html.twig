@@ -6,12 +6,36 @@
         {{ encore_entry_link_tags('app') }}
         {% block stylesheets %}
         {% endblock %}
+        <link href="https://fonts.googleapis.com/css?family=Pirata+One&amp;display=swap" rel="stylesheet">
     </head>
 
-    <body>
-        {% block body %}
+    <body class="accueil forum">
 
-        {% endblock %}
+    <header class="header">
+            <div class="header__main">
+                <a href="index.html"><h1>La monde est chiant, parce que ....</h1></a>
+                <button class="button button--newPost">Ajouter</button>
+            </div>
+            <div class="post--new">
+                <form action="" method="get" class="form" autocomplete="off">
+                    <div class="form__field">
+                        <label for="story">Enter ton chiant histoire: </label>
+                        <textarea type="text" name="story" id="story" required></textarea>
+                    </div>
+                    <div class="form__line">
+                        <label for="tags">Enter des Tags (sepere par virgule): </label>
+                        <input type="text" name="tags" id="tags" required>
+                    </div>
+                    <div class="form__button">
+                        <input type="imageupload" value="Upload un image">
+                    </div>
+                    <div class="form__button">
+                        <input type="submit" value="Send" class="button--sendPost">
+                    </div>
+                </form>
+            </div>
+    </header>
+        {% block body %}{% endblock %}
         <script src="{{ asset('build/runtime.js') }}"></script>
         <script src="{{ asset('build/app.js') }}"></script>
         {% block javascripts %}
